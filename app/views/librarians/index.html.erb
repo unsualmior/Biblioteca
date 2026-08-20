@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Bibliotecarios" %>
+
+<h1>Bibliotecarios</h1>
+
+<div id="librarians">
+  <% @librarians.each do |librarian| %>
+    <%= render librarian %>
+    <p>
+      <%= link_to "Mostrar este bibliotecário", librarian %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Novo bibliotecário", new_librarian_path %>

@@ -1,0 +1,10 @@
+
+
+<%= render @librarian %>
+
+<div>
+  <%= link_to "Editar esse bibliotecário", edit_librarian_path(@librarian) %> |
+  <%= link_to "Voltar para bibliotecários", librarians_path %>
+
+  <%= button_to "Deletar este bibliotecário", @librarian, method: :delete %>
+</div>

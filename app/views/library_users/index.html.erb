@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Usuários da Biblioteca" %>
+
+<h1>Usuários da Biblioteca</h1>
+
+<div id="library_users">
+  <% @library_users.each do |library_user| %>
+    <%= render library_user %>
+    <p>
+      <%= link_to "Mostrar este usuário da biblioteca", library_user %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Novo usuário da biblioteca", new_library_user_path %>

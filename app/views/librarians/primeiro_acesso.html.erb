@@ -1,0 +1,13 @@
+<h1>Defina sua nova senha</h1>
+
+<%= form_with url: atualizar_senha_path(@librarian), method: :patch do |form| %>
+  <div>
+    <%= form.label :password, "Nova senha", style: "display: block" %>
+    <%= form.password_field :password, name: "password" %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation, "Confirmar nova senha", style: "display: block" %>
+    <%= form.password_field :password_confirmation, name: "password_confirmation" %>
+  </div>
+  <%= form.submit "Salvar nova senha" %>
+<% end %>

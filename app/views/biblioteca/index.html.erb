@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<style>
+  h1 {
+    text-align: center;
+    background-color: #f2f2f2;
+  }
+    
+</style>
+<head>
+    <title>Biblioteca</title>
+</head>
+<body>
+
+<h1>Biblioteca Municipal Ney Pontes</h1>
+
+<% if current_librarian %>
+  <p>Bem-vindo(a), <%= current_librarian.name %>!</p>
+  <p>
+    <%= link_to "Livros", books_path %> |
+    <%= link_to "Categorias", categories_path %> |
+    <%= link_to "Usuários", library_users_path %> |
+    <%= link_to "Empréstimos", loans_path %> |
+    <%= link_to "Bibliotecários", librarians_path %> |
+    <%= link_to "Sair", logout_path, data: { turbo_method: :delete } %>
+  </p>
+<% else %>
+  <%= link_to "Login", login_path %>
+<% end %>
+
+</body>
+</html>

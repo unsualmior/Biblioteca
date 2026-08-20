@@ -1,0 +1,15 @@
+<h1>Emprestar: <%= @book.title %></h1>
+
+<%= form_with url: book_loans_path(@book), method: :post do |form| %>
+  <div>
+    <%= label_tag :cpf, "CPF do usuário" %>
+    <%= text_field_tag :cpf %>
+  </div>
+  <div>
+    <%= label_tag :loan_password, "Senha de empréstimo" %>
+    <%= password_field_tag :loan_password %>
+  </div>
+  <%= submit_tag "Confirmar empréstimo" %>
+<% end %>
+
+<%= link_to "Voltar", book_path(@book) %>

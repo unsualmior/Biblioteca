@@ -1,0 +1,42 @@
+<%= form_with(model: book) do |form| %>
+  <% if book.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(book.errors.count, "erro") %> impediram que este livro fosse salvo:</h2>
+
+      <ul>
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, "Título", style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :author, "Autor", style: "display: block" %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div>
+    <%= form.label :status, "Status", style: "display: block" %>
+    <%= form.select :status, ["disponivel", "emprestado"] %>
+  </div>
+
+  <div>
+    <%= form.label :notes, "Observações", style: "display: block" %>
+    <%= form.textarea :notes %>
+  </div>
+
+  <div>
+    <%= form.label :category_id, "Categoria", style: "display: block" %>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.submit book.new_record? ? "Cadastrar livro" : "Atualizar livro" %>
+  </div>
+<% end %>

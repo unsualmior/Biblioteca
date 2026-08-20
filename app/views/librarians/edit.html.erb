@@ -1,0 +1,12 @@
+<% content_for :title, "Editando bibliotecário" %>
+
+<h1>Editando Bibliotecário</h1>
+
+<%= render "form", librarian: @librarian %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar este bibliotecário", @librarian %> |
+  <%= link_to "Voltar para bibliotecários", librarians_path %>
+</div>

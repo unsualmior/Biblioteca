@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book: one
+  library_user: one
+  loan_date: 2026-08-20
+  due_date: 2026-08-20
+  returned: false
+  returned_at: 2026-08-20
+
+two:
+  book: two
+  library_user: two
+  loan_date: 2026-08-20
+  due_date: 2026-08-20
+  returned: false
+  returned_at: 2026-08-20
