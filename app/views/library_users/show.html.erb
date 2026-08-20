@@ -1,0 +1,9 @@
+
+<%= render @library_user %>
+
+<div>
+  <%= link_to "Editar este usuário da biblioteca", edit_library_user_path(@library_user) %> |
+  <%= link_to "Voltar aos usuários da biblioteca", library_users_path %>
+
+  <%= button_to "Excluir este usuário da biblioteca", @library_user, method: :delete %>
+</div>

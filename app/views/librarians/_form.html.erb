@@ -1,0 +1,41 @@
+<%= form_with(model: librarian) do |form| %>
+  <% if librarian.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(librarian.errors.count, "erro") %> impediram que este bibliotecário fosse salvo:</h2>
+
+      <ul>
+        <% librarian.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, "Nome", style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email, "E-mail", style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+  <%= form.label :password, "Senha", style: "display: block" %>
+  <%= form.password_field :password %>
+</div>
+<div>
+  <%= form.label :password_confirmation, "Confirmar senha", style: "display: block" %>
+  <%= form.password_field :password_confirmation %>
+</div>
+
+  <div>
+    <%= form.label :first_access, "Primeiro acesso", style: "display: block" %>
+    <%= form.checkbox :first_access %>
+  </div>
+
+  <div>
+    <%= form.submit librarian.new_record? ? "Criar bibliotecário" : "Atualizar bibliotecário" %>
+  </div>
+<% end %>

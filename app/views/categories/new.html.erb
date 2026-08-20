@@ -1,0 +1,11 @@
+<% content_for :title, "Nova categoria" %>
+
+<h1>Nova Categoria</h1>
+
+<%= render "form", category: @category %>
+
+<br>
+
+<div>
+  <%= link_to "Voltar às categorias", categories_path %>
+</div>

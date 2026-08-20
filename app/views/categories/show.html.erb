@@ -1,0 +1,10 @@
+
+
+<%= render @category %>
+
+<div>
+  <%= link_to "Editar esta categoria", edit_category_path(@category) %> |
+  <%= link_to "Voltar às categorias", categories_path %>
+
+  <%= button_to "Excluir esta categoria", @category, method: :delete %>
+</div>

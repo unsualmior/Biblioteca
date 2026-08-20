@@ -1,0 +1,12 @@
+<% content_for :title, "Editando usuário da biblioteca" %>
+
+<h1>Editando usuário da biblioteca</h1>
+
+<%= render "form", library_user: @library_user %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar usuário", @library_user %> |
+  <%= link_to "Voltar aos usuários", library_users_path %>
+</div>

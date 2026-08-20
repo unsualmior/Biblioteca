@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<%= form_with url: login_path, method: :post do |form| %>
+  <div>
+    <%= form.label :email, "E-mail", style: "display: block" %>
+    <%= form.text_field :email, name: "email" %>
+  </div>
+  <div>
+    <%= form.label :senha, "Senha", style: "display: block" %>
+    <%= form.password_field :senha, name: "senha" %>
+  </div>
+  <%= form.submit "Entrar" %>
+
+  <p><%= link_to "Esqueci minha senha", esqueci_senha_path %></p>
+<% end %>

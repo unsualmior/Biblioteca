@@ -1,0 +1,11 @@
+<h1>Recuperar senha</h1>
+
+<%= form_with url: esqueci_senha_path, method: :post do |form| %>
+  <div>
+    <%= label_tag :email, "Digite seu e-mail cadastrado" %>
+    <%= text_field_tag :email %>
+  </div>
+  <%= submit_tag "Enviar nova senha" %>
+<% end %>
+
+<%= link_to "Voltar ao login", login_path %>

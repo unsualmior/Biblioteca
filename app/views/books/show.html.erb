@@ -1,0 +1,14 @@
+
+
+<%= render @book %>
+
+<div>
+  <%= link_to "Editar esse livro", edit_book_path(@book) %> |
+  <%= link_to "Voltar aos livros", books_path %>
+
+  <%= button_to "Excluir este livro", @book, method: :delete %>
+</div>
+
+<% if @book.status == "disponivel" %>
+  <%= link_to "Emprestar este livro", new_book_loan_path(@book) %>
+<% end %>

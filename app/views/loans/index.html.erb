@@ -1,0 +1,26 @@
+<h1>Empréstimos</h1>
+
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Livro</th>
+    <th>Usuário</th>
+    <th>Data empréstimo</th>
+    <th>Devolução prevista</th>
+    <th>Status</th>
+    <th>Ação</th>
+  </tr>
+  <% @loans.each do |loan| %>
+    <tr>
+      <td><%= loan.book.title %></td>
+      <td><%= loan.library_user.full_name %></td>
+      <td><%= loan.loan_date.strftime("%d/%m/%Y") %></td>
+      <td><%= loan.due_date.strftime("%d/%m/%Y") %></td>
+      <td><%= loan.returned? ? "Devolvido" : "Emprestado" %></td>
+      <td>
+        <% unless loan.returned? %>
+          <%= link_to "Registrar devolução", return_book_loan_path(loan), data: { turbo_method: :patch } %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
